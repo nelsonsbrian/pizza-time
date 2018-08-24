@@ -5,6 +5,7 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src='js/jquery-3.3.1.js'></script>
   <script src="js/scripts.js"></script>
+  <script src="js/pizza.js"></script>
   <title>Pizza Time</title>
 </head>
   <body>
@@ -14,48 +15,48 @@
         <h2>Make your own pizza:</h2>
         <div class="pSize">
           <h3>Size:</h3>
-          <label class="radio-inline"><input type="radio" value='1' name="pSize">Personal</label>
-          <label class="radio-inline"><input type="radio" value='2' name="pSize">Medium</label>
-          <label class="radio-inline"><input type="radio" value='3' name="pSize" checked>Large</label>
-          <label class="radio-inline"><input type="radio" value='4' name="pSize">Family</label>
+          <label class="radio-inline"><input type="radio" value='Personal' name="pSize">Personal</label>
+          <label class="radio-inline"><input type="radio" value='Medium' name="pSize">Medium</label>
+          <label class="radio-inline"><input type="radio" value='Large' name="pSize" checked>Large</label>
+          <label class="radio-inline"><input type="radio" value='Family' name="pSize">Family</label>
         </div>
         <div class="pCrust">
           <h3>Crust:</h3>
-          <label class="radio-inline"><input type="radio" value='1' name="pCrust">Thin</label>
-          <label class="radio-inline"><input type="radio" value='2' name="pCrust"checked>Regular</label>
-          <label class="radio-inline"><input type="radio" value='3' name="pCrust">Deep Dish</label>
+          <label class="radio-inline"><input type="radio" value='Thin' name="pCrust">Thin</label>
+          <label class="radio-inline"><input type="radio" value='Regular' name="pCrust"checked>Regular</label>
+          <label class="radio-inline"><input type="radio" value='DeepDish' name="pCrust">Deep Dish</label>
         </div>
         <div class="pSauce">
           <h3>Sauce:</h3>
-          <label class="radio-inline"><input type="radio" value='1' name="pSauce" checked>Red</label>
-          <label class="radio-inline"><input type="radio" value='2' name="pSauce">White</label>
-          <label class="radio-inline"><input type="radio" value='3' name="pSauce">Oil & Garlic</label>
+          <label class="radio-inline"><input type="radio" value='Red' name="pSauce" checked>Red</label>
+          <label class="radio-inline"><input type="radio" value='White' name="pSauce">White</label>
+          <label class="radio-inline"><input type="radio" value='OilGarlic' name="pSauce">Oil & Garlic</label>
         </div>
         <div class="pCheese">
           <h3>Cheese:</h3>
-          <label class="radio-inline"><input type="radio" value='1' name="pCheese" checked>Cheese</label>
-          <label class="radio-inline"><input type="radio" value='2' name="pCheese">No Cheese</label>
+          <label class="radio-inline"><input type="radio" value='Cheese' name="pCheese" checked>Cheese</label>
+          <label class="radio-inline"><input type="radio" value='noCheese' name="pCheese">No Cheese</label>
         </div>
         <div class="pMeat">
           <h3>Meat:</h3>
-          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="1">Pepperoni</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="2">Sausage</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="3">Chicken</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="4">Candian Bacon</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="Pepperoni">Pepperoni</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="Sausage">Sausage</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="Chicken">Chicken</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="CanadianBacon">Candian Bacon</label>
         </div>
         <div class="pPremTopping">
           <h3>Premium Topping:</h3>
-          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="1">Bacon</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="2">Artichoke</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="3">Anchovies</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="Bacon">Bacon</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="Artichoke">Artichoke</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="Anchovies">Anchovies</label>
         </div>
         <div class="pTopping">
           <h3>Topping:</h3>
-          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="1">Olives</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="2">Onion</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="3">Spinach</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="4">Tomato</label>
-          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="5">Jalepeno</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="Olives">Olives</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="Onion">Onion</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="Spinach">Spinach</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="Tomato">Tomato</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="Jalepneo">Jalepeno</label>
         </div>
         <button type="button" id="buyPizza" class="btn btn-success">Add to Cart</button>
       </div>

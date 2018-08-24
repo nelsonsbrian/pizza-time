@@ -1,16 +1,6 @@
 // business logic
 var pizzas = [];
 
-var Pizza = function(pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping) {
-  this.pSize = parseInt(pSize);
-  this.pCrust = parseInt(pCrust);
-  this.pSauce = parseInt(pSauce);
-  this.pCheese = parseInt(pCheese);
-  this.pMeat = pMeat;
-  this.pPremTopping = pPremTopping;
-  this.pTopping = pTopping;
-
-}
 
 var printReceipt = function() {
   pizzas.forEach(function(pizza) {
@@ -28,20 +18,21 @@ var printReceipt = function() {
 
 
 
+
 // user logic
 $(document).ready(function() {
   $('button#buyPizza').click(function() {
-    var pSize = $( "input[name=pSize]:radio").val();
-    var pCrust = $( "input[name=pCrust]:radio").val();
-    var pSauce = $( "input[name=pSauce]:radio").val();
-    var pCheese = $( "input[name=pCheese]:radio").val();
+    var pSize = $("input[name=pSize]:radio:checked").val();
+    var pCrust = $("input[name=pCrust]:radio:checked").val();
+    var pSauce = $("input[name=pSauce]:radio:checked").val();
+    var pCheese = $("input[name=pCheese]:radio:checked").val();
     pMeat = [];
     pPremTopping = [];
     pTopping = [];
     $("input:checkbox[name=pMeat]:checked").each(function() {pMeat.push($(this).val())});
     $("input:checkbox[name=pPremTopping]:checked").each(function() {pPremTopping.push($(this).val())});
     $("input:checkbox[name=pTopping]:checked").each(function() {pTopping.push($(this).val())});
-
+    alert(pSize + pCrust + pSauce + pCheese + pMeat + pPremTopping + pTopping);
     var newPizza = new Pizza(pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping);
     pizzas.push(newPizza);
 

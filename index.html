@@ -3,23 +3,62 @@
 <head>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+  <script src='js/jquery-3.3.1.js'></script>
   <script src="js/scripts.js"></script>
   <title>Pizza Time</title>
 </head>
   <body>
     <div class="container">
       <h1>Pizza Time</h1>
-      <form id="txtTranslator">
-        <div class="form-group">
-          <label for="txt">Text to encrypt:</label>
-          <input id="inputtxt" type="text">
+      <div class="pizzaMake">
+        <h2>Make your own pizza:</h2>
+        <div class="pSize">
+          <h3>Size:</h3>
+          <label class="radio-inline"><input type="radio" value='1' name="pSize">Personal</label>
+          <label class="radio-inline"><input type="radio" value='2' name="pSize">Medium</label>
+          <label class="radio-inline"><input type="radio" value='3' name="pSize" checked>Large</label>
+          <label class="radio-inline"><input type="radio" value='4' name="pSize">Family</label>
         </div>
-        <button type="submit" class="btn">Find out!</button>
-      </form>
+        <div class="pCrust">
+          <h3>Crust:</h3>
+          <label class="radio-inline"><input type="radio" value='1' name="pCrust">Thin</label>
+          <label class="radio-inline"><input type="radio" value='2' name="pCrust"checked>Regular</label>
+          <label class="radio-inline"><input type="radio" value='3' name="pCrust">Deep Dish</label>
+        </div>
+        <div class="pSauce">
+          <h3>Sauce:</h3>
+          <label class="radio-inline"><input type="radio" value='1' name="pSauce" checked>Red</label>
+          <label class="radio-inline"><input type="radio" value='2' name="pSauce">White</label>
+          <label class="radio-inline"><input type="radio" value='3' name="pSauce">Oil & Garlic</label>
+        </div>
+        <div class="pCheese">
+          <h3>Cheese:</h3>
+          <label class="radio-inline"><input type="radio" value='1' name="pCheese" checked>Cheese</label>
+          <label class="radio-inline"><input type="radio" value='2' name="pCheese">No Cheese</label>
+        </div>
+        <div class="pMeat">
+          <h3>Meat:</h3>
+          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="1">Pepperoni</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="2">Sausage</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="3">Chicken</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="4">Candian Bacon</label>
+        </div>
+        <div class="pPremTopping">
+          <h3>Premium Topping:</h3>
+          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="1">Bacon</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="2">Artichoke</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pPremTopping' value="3">Anchovies</label>
+        </div>
+        <div class="pTopping">
+          <h3>Topping:</h3>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="1">Olives</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="2">Onion</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="3">Spinach</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="4">Tomato</label>
+          <label class="checkbox-inline"><input type="checkbox" name='pTopping' value="5">Jalepeno</label>
+        </div>
+        <button type="button" id="buyPizza" class="btn btn-success">Add to Cart</button>
+      </div>
       <div id="result">
       </div>
     </div>

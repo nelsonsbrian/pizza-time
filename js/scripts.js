@@ -1,23 +1,26 @@
 // business logic
 var pizzas = [];
+var pizzaId = 0;
 
-
-var printReceipt = function() {
-  pizzas.forEach(function(pizza) {
-    var price = pizza.price();
-    $('#result').append(
-      "Pizza Size: " + pizza.pSize +
-      "<br>Pizza Crust: " + pizza.pCrust +
-      "<br>Pizza Sauce: " +pizza. pSauce +
-      "<br>Pizza Cheese: " + pizza.pCheese +
-      "<br>Pizza Meat: " + pizza.pMeat +
-      "<br>Pizza Premium Topping: " + pizza.pPremTopping +
-      "<br>Pizza Topping: " + pizza.pTopping +
-      "<br>Subtotal: $" + price +
-      "<br>Tax: $" + price.tax() +
-      "<br>Total: $" + price.totalPrice(price.tax())
-      )
-  });
+var printReceipt = function(id) {
+  var price = pizzas[id].price();
+  $('#price').text('');
+  $('#price').append(
+    "<div class='pizzaList'>" +
+    "<br><span class='subHead'>Pizza Details:</span>" +
+    "<br>Size: " + pizzas[id].pSize +
+    "<br>Crust: " + pizzas[id].pCrust +
+    "<br>Pizza Sauce: " + pizzas[id].pSauce +
+    "<br>Cheese[Y/N]: " + pizzas[id].pCheese +
+    "<br><span class='subHead'>Toppings:</span>" +
+    "<br>Pizza Meat: " + pizzas[id].pMeat +
+    "<br>Pizza Premium Topping: " + pizzas[id].pPremTopping +
+    "<br>Pizza Topping: " + pizzas[id].pTopping +
+    "<br>Subtotal: $" + price.toFixed(2) +
+    "<br>Tax: $" + price.tax() +
+    "<br>Total: $" + price.totalPrice(price.tax()) +
+    "</div>"
+  );
 }
 
 Number.prototype.tax = function() {
@@ -25,7 +28,7 @@ Number.prototype.tax = function() {
 };
 
 Number.prototype.totalPrice = function(tax) {
-  return  this + tax;
+  return  parseFloat((this + tax).toFixed(2));
 };
 
 
@@ -43,9 +46,16 @@ $(document).ready(function() {
     $("input:checkbox[name=pPremTopping]:checked").each(function() {pPremTopping.push($(this).val())});
     $("input:checkbox[name=pTopping]:checked").each(function() {pTopping.push($(this).val())});
     // alert(pSize + pCrust + pSauce + pCheese + pMeat + pPremTopping + pTopping);
-    var newPizza = new Pizza(pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping);
+    var newPizza = new Pizza(pizzaId, pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping);
     pizzas.push(newPizza);
-
-    printReceipt();
+    $('.orders').append("<li id=" + pizzaId + ">" + pSize + " pizza: $" + newPizza.price().toFixed(2) + "</li>");
+    pizzaId++;
   });
+
+
+});
+
+
+$(document).on('click', '.orders > li' , function() {
+  printReceipt($(this).attr('id'));
 });

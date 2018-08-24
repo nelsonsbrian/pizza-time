@@ -50,7 +50,6 @@ Number.prototype.totalPrice = function(tax) {// computer the total using the tax
 };
 
 
-
 // user logic
 $(document).ready(function() {
   //add to cart button - takes form fields and creats a new pizza and adds to array. Uses Pizza contructor on pizza/js.js
@@ -83,13 +82,12 @@ $(document).ready(function() {
   $('form#deliveryForm').submit(function(event) {// submits the delivery form.
     event.preventDefault();
     $('.submitResponse').text("Thanks " + $('#name').val() + ", Your pizza will be delivered to " +  $('#address').val() + " in under 40 minutes!")
-    $('.deliveryForm').hide();    
+    $('.deliveryForm').hide();
     $('#name').val('');
     $('#address').val('');
   });
 
 });
-
 
 $(document).on('click', '.orders > li' , function() {
   printReceipt($(this).attr('id'));

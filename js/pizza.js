@@ -1,3 +1,4 @@
+//Pizza contructor
 function Pizza(id, pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping) {
   this.id = id;
   this.pSize = pSize;
@@ -8,6 +9,7 @@ function Pizza(id, pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping
   this.pPremTopping = pPremTopping;
   this.pTopping = pTopping;
 
+//Prices of size, crust, sauce, chess, meat, premToppings, and toppings
   this.sizePrice = {
     Personal: 4,
     Medium: 7,
@@ -49,6 +51,7 @@ function Pizza(id, pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping
     Any: .31
   }
 
+//function to add prices based on user selected size, crust, sauce, cheese, meat, premToppings, and toppings
   this.price = function() {
     var price = 0;
     price += this.sizePrice[this.pSize];

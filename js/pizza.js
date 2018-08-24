@@ -37,7 +37,7 @@ function Pizza(pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping) {
     Pepperoni: .60,
     Sausage: .75,
     Chicken: 1.25,
-    CandianBacon: .50
+    CanadianBacon: .50
   }
 
   this.premToppingPrice = {
@@ -47,32 +47,26 @@ function Pizza(pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping) {
   }
 
   this.toppingPrice = {
-    Olives: .25,
-    Onion: .10,
-    Spinach: .30,
-    Tomato: .33,
-    Jalepeno: .22,
+    Any: .31
   }
 
   this.price = function() {
     var price = 0;
-    console.log(price);
     price += this.sizePrice[this.pSize];
-    console.log(price);
     price += this.crustPrice[this.pCrust];
-    console.log(price);
     price += this.saucePrice[this.pSauce];
-    console.log(price);
     price += this.cheesePrice[this.pCheese];
-        console.log(price);
     for(i=0;i<this.pMeat.length;i++) {
       price += this.meatPrice[this.pMeat[i]];
     }
+    for(i=0;i<this.pPremTopping.length;i++) {
+      price += this.premToppingPrice[this.pPremTopping[i]];
         console.log(price);
-    // price += this.premToppingPrice[this.pPremTopping];
-    //     console.log(price);
-    // price += this.toppingPrice[this.pTopping];
-    //     console.log(price);
+    }
+    for(i=0;i<this.pTopping.length;i++) {
+      price += this.toppingPrice["Any"];
+        console.log(price);
+    }
     return price;
   }
 }

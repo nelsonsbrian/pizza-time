@@ -33,6 +33,14 @@ var showTotal = function() {
   );
 }
 
+var toppingCount = function(pizza) {
+  return pizza.length;
+}
+
+var meatsCount = function(meat) {
+  return meat.length;
+}
+
 Number.prototype.tax = function() {
   return parseFloat((this * .095).toFixed(2));
 };
@@ -40,6 +48,7 @@ Number.prototype.tax = function() {
 Number.prototype.totalPrice = function(tax) {
   return  parseFloat((this + tax).toFixed(2));
 };
+
 
 
 // user logic
@@ -57,7 +66,9 @@ $(document).ready(function() {
     $("input:checkbox[name=pTopping]:checked").each(function() {pTopping.push($(this).val())});
     var newPizza = new Pizza(pizzaId, pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping);
     pizzas.push(newPizza);
-    $('.orders').append("<li id=" + pizzaId + ">" + pSize + " pizza: $" + newPizza.price().toFixed(2) + "</li>");
+    var toppings = toppingCount(pPremTopping.concat(pTopping));
+    var meats = meatsCount(pMeat);
+    $('.orders').append("<li id=" + pizzaId + ">" + (pizzaId + 1) + ". " + pSize + " " + pSauce + "  pizza: $" + newPizza.price().toFixed(2) + " - meat[" + meats + "]" + " - topp[" + toppings + "]</li>");
     pizzaId++;
     $('#orderList').show();
     $('#orderRecap').show();

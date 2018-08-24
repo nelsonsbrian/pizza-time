@@ -2,7 +2,7 @@
 var pizzas = [];
 var pizzaId = 0;
 
-var printReceipt = function(id) {
+var printReceipt = function(id) { //gives a detailed showing of what components are in the pizza
   var price = pizzas[id].price();
   $('#price').empty();
   $('#price').append(
@@ -20,7 +20,7 @@ var printReceipt = function(id) {
   );
 }
 
-var showTotal = function() {
+var showTotal = function() { //adds all of the prices for every pizza in pizzas[]
   var price = 0;
   pizzas.forEach(function(pizza) {
     price += pizza.price();
@@ -33,19 +33,19 @@ var showTotal = function() {
   );
 }
 
-var toppingCount = function(pizza) {
+var toppingCount = function(pizza) {//counts number of toppings and premium toppings on a pizza
   return pizza.length;
 }
 
-var meatsCount = function(meat) {
+var meatsCount = function(meat) {// counts number of meats on a pizza
   return meat.length;
 }
 
-Number.prototype.tax = function() {
+Number.prototype.tax = function() {// computes tax from the subtotal of price()
   return parseFloat((this * .095).toFixed(2));
 };
 
-Number.prototype.totalPrice = function(tax) {
+Number.prototype.totalPrice = function(tax) {// computer the total using the tax prototype
   return  parseFloat((this + tax).toFixed(2));
 };
 
@@ -53,6 +53,7 @@ Number.prototype.totalPrice = function(tax) {
 
 // user logic
 $(document).ready(function() {
+  //add to cart button - takes form fields and creats a new pizza and adds to array. Uses Pizza contructor on pizza/js.js
   $('button#buyPizza').click(function() {
     var pSize = $("input[name=pSize]:radio:checked").val();
     var pCrust = $("input[name=pCrust]:radio:checked").val();
@@ -75,13 +76,14 @@ $(document).ready(function() {
     showTotal();
   });
 
-  $('button#deliveryBut').click(function() {
+  $('button#deliveryBut').click(function() {// shows the name/address form to fill out for delivery
     $('.deliveryForm').show();
   });
 
-  $('form#deliveryForm').submit(function(event) {
+  $('form#deliveryForm').submit(function(event) {// submits the delivery form.
     event.preventDefault();
-    alert('works');
+    $('.submitResponse').text("Thanks " + $('#name').val() + ", Your pizza will be delivered to " +  $('#address').val() + " in under 40 minutes!")
+    $('.deliveryForm').hide();    
     $('#name').val('');
     $('#address').val('');
   });

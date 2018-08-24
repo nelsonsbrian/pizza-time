@@ -1,3 +1,9 @@
+body {
+  background: linear-gradient(to top left, #ffb45e, #ffe8ce);
+  height: 900px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
 #orderList {
   font-size: 16px;
 
@@ -34,4 +40,5 @@ h1 {
 
 h3 {
   font-style: italic;
+  font-weight: bold;
 }

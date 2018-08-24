@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Pizza Time</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:700" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <link href="css/styles.css" rel="stylesheet">
@@ -17,33 +18,34 @@
     <div class="row">
       <div class="col-md-5">
 
-
+        <!-- Input Radio Buttons -->
         <div class="pizzaMake">
           <h2>Make your own pizza:</h2>
           <div class="pSize">
             <h3>Size:</h3>
-            <label class="radio-inline"><input type="radio" value='Personal' name="pSize">Personal</label>
-            <label class="radio-inline"><input type="radio" value='Medium' name="pSize">Medium</label>
-            <label class="radio-inline"><input type="radio" value='Large' name="pSize" checked>Large</label>
-            <label class="radio-inline"><input type="radio" value='Family' name="pSize">Family</label>
+            <label class="radio-inline "><input type="radio" value='Personal' name="pSize">Personal</label>
+            <label class="radio-inline "><input type="radio" value='Medium' name="pSize">Medium</label>
+            <label class="radio-inline "><input type="radio" value='Large' name="pSize" checked>Large</label>
+            <label class="radio-inline "><input type="radio" value='Family' name="pSize">Family</label>
           </div>
           <div class="pCrust">
             <h3>Crust:</h3>
-            <label class="radio-inline"><input type="radio" value='Thin' name="pCrust">Thin</label>
-            <label class="radio-inline"><input type="radio" value='Regular' name="pCrust"checked>Regular</label>
-            <label class="radio-inline"><input type="radio" value='DeepDish' name="pCrust">Deep Dish</label>
+            <label class="radio-inline "><input type="radio" value='Thin' name="pCrust">Thin</label>
+            <label class="radio-inline "><input type="radio" value='Regular' name="pCrust"checked>Regular</label>
+            <label class="radio-inline "><input type="radio" value='DeepDish' name="pCrust">Deep Dish</label>
           </div>
           <div class="pSauce">
             <h3>Sauce:</h3>
-            <label class="radio-inline"><input type="radio" value='Red' name="pSauce" checked>Red</label>
-            <label class="radio-inline"><input type="radio" value='White' name="pSauce">White</label>
-            <label class="radio-inline"><input type="radio" value='OilGarlic' name="pSauce">Oil & Garlic</label>
+            <label class="radio-inline "><input type="radio" value='Red' name="pSauce" checked>Red</label>
+            <label class="radio-inline "><input type="radio" value='White' name="pSauce">White</label>
+            <label class="radio-inline "><input type="radio" value='OilGarlic' name="pSauce">Oil & Garlic</label>
           </div>
           <div class="pCheese">
             <h3>Cheese:</h3>
-            <label class="radio-inline"><input type="radio" value='Cheese' name="pCheese" checked>Cheese</label>
-            <label class="radio-inline"><input type="radio" value='noCheese' name="pCheese">No Cheese</label>
+            <label class="radio-inline "><input type="radio" value='Cheese' name="pCheese" checked>Cheese</label>
+            <label class="radio-inline "><input type="radio" value='noCheese' name="pCheese">No Cheese</label>
           </div>
+          <!-- Input Checkboxes -->
           <div class="pMeat">
             <h3>Meat:</h3>
             <label class="checkbox-inline"><input type="checkbox" name='pMeat'value="Pepperoni">Pepperoni</label>
@@ -70,6 +72,7 @@
         </div>
       </div>
       <div class="col-md-5">
+        <!-- 2nd column - displays total and pizza's order -->
         <div id="orderRecap">
           <h3>Total:</h3>
           <div id="total">
@@ -98,11 +101,10 @@
             </div>
           </form>
         </div>
-
+        <div class="submitResponse">
+        </div>
       </div>
     </div>
-
   </div>
-
 </body>
 </html>

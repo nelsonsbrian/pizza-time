@@ -3,7 +3,7 @@
 
 }
 
-.expandable:hover {
+li:hover {
   text-decoration: underline;
   font-weight: 500px;
   color: #0000EE;
@@ -13,4 +13,17 @@
   text-decoration: underline;
   font-weight: bold;
   font-size: 20px;
+}
+
+.deliveryForm, #orderList, #orderRecap {
+  display: none;
+}
+
+#submitAdd {
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }

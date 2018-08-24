@@ -15,6 +15,7 @@ _Website that allows user to order a pizza by selecting favorite toppings._
 | **The user inputs favorite toppings and desired pizza size and program returns a string of what pizza they want with the same info.** | Input: "Forms: large cheese pepperoni sausage" | Output: "Thanks for ordering a large cheese and pepperoni pizza!" |
 | **Based on the toppings and size, program returns a cost for the pizza** | Input: "Forms: large cheese pepperoni sausage" | Output: "Thanks for ordering a large cheese and pepperoni pizza! The cost for the pizza is $10." |
 | **User can order additional pizzas and the previous pizza is displayed on a ledger** | Input: "" | Output: "" |
+| **Add delivery option** | Input: "" | Output: "" |
 | **Add a dropdown menu for premade pizzas that will fill in the forms automatically.** | Input: "" | Output: "" |
 | **** | Input: "" | Output: "" |
 | **** | Input: "" | Output: "" |

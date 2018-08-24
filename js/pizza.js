@@ -1,5 +1,3 @@
-
-
 function Pizza(id, pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping) {
   this.id = id;
   this.pSize = pSize;

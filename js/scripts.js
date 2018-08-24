@@ -4,10 +4,10 @@ var pizzaId = 0;
 
 var printReceipt = function(id) {
   var price = pizzas[id].price();
-  $('#price').text('');
+  $('#price').empty();
   $('#price').append(
     "<div class='pizzaList'>" +
-    "<br><span class='subHead'>Pizza Details:</span>" +
+    "<span class='subHead'>Pizza Details:</span>" +
     "<br>Size: " + pizzas[id].pSize +
     "<br>Crust: " + pizzas[id].pCrust +
     "<br>Pizza Sauce: " + pizzas[id].pSauce +
@@ -16,10 +16,20 @@ var printReceipt = function(id) {
     "<br>Pizza Meat: " + pizzas[id].pMeat +
     "<br>Pizza Premium Topping: " + pizzas[id].pPremTopping +
     "<br>Pizza Topping: " + pizzas[id].pTopping +
-    "<br>Subtotal: $" + price.toFixed(2) +
-    "<br>Tax: $" + price.tax() +
-    "<br>Total: $" + price.totalPrice(price.tax()) +
     "</div>"
+  );
+}
+
+var showTotal = function() {
+  var price = 0;
+  pizzas.forEach(function(pizza) {
+    price += pizza.price();
+  });
+  $('#total').empty();
+  $('#total').append(
+    "Subtotal: $" + price.toFixed(2) +
+    "<br>Tax: $" + price.tax() +
+    "<br>Total: $" + price.totalPrice(price.tax())
   );
 }
 
@@ -45,13 +55,25 @@ $(document).ready(function() {
     $("input:checkbox[name=pMeat]:checked").each(function() {pMeat.push($(this).val())});
     $("input:checkbox[name=pPremTopping]:checked").each(function() {pPremTopping.push($(this).val())});
     $("input:checkbox[name=pTopping]:checked").each(function() {pTopping.push($(this).val())});
-    // alert(pSize + pCrust + pSauce + pCheese + pMeat + pPremTopping + pTopping);
     var newPizza = new Pizza(pizzaId, pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping);
     pizzas.push(newPizza);
     $('.orders').append("<li id=" + pizzaId + ">" + pSize + " pizza: $" + newPizza.price().toFixed(2) + "</li>");
     pizzaId++;
+    $('#orderList').show();
+    $('#orderRecap').show();
+    showTotal();
   });
 
+  $('button#deliveryBut').click(function() {
+    $('.deliveryForm').show();
+  });
+
+  $('form#deliveryForm').submit(function(event) {
+    event.preventDefault();
+    alert('works');
+    $('#name').val('');
+    $('#address').val('');
+  });
 
 });
 

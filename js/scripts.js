@@ -4,6 +4,7 @@ var pizzas = [];
 
 var printReceipt = function() {
   pizzas.forEach(function(pizza) {
+    var price = pizza.price();
     $('#result').append(
       "Pizza Size: " + pizza.pSize +
       "<br>Pizza Crust: " + pizza.pCrust +
@@ -11,12 +12,21 @@ var printReceipt = function() {
       "<br>Pizza Cheese: " + pizza.pCheese +
       "<br>Pizza Meat: " + pizza.pMeat +
       "<br>Pizza Premium Topping: " + pizza.pPremTopping +
-      "<br>Pizza Topping: " + pizza.pTopping
+      "<br>Pizza Topping: " + pizza.pTopping +
+      "<br>Subtotal: $" + price +
+      "<br>Tax: $" + price.tax() +
+      "<br>Total: $" + price.totalPrice(price.tax())
       )
   });
 }
 
+Number.prototype.tax = function() {
+  return parseFloat((this * .095).toFixed(2));
+};
 
+Number.prototype.totalPrice = function(tax) {
+  return  this + tax;
+};
 
 
 // user logic
@@ -32,7 +42,7 @@ $(document).ready(function() {
     $("input:checkbox[name=pMeat]:checked").each(function() {pMeat.push($(this).val())});
     $("input:checkbox[name=pPremTopping]:checked").each(function() {pPremTopping.push($(this).val())});
     $("input:checkbox[name=pTopping]:checked").each(function() {pTopping.push($(this).val())});
-    alert(pSize + pCrust + pSauce + pCheese + pMeat + pPremTopping + pTopping);
+    // alert(pSize + pCrust + pSauce + pCheese + pMeat + pPremTopping + pTopping);
     var newPizza = new Pizza(pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping);
     pizzas.push(newPizza);
 

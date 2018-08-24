@@ -61,11 +61,9 @@ function Pizza(pSize, pCrust, pSauce, pCheese, pMeat, pPremTopping, pTopping) {
     }
     for(i=0;i<this.pPremTopping.length;i++) {
       price += this.premToppingPrice[this.pPremTopping[i]];
-        console.log(price);
     }
     for(i=0;i<this.pTopping.length;i++) {
       price += this.toppingPrice["Any"];
-        console.log(price);
     }
     return price;
   }
